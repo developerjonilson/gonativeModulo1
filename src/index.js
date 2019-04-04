@@ -1,40 +1,45 @@
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Button } from "react-native";
+import React, { Component } from 'react';
+import {
+  Platform, StyleSheet, Text, View, Button,
+} from 'react-native';
 
-import Todo from "./components/Todo";
+import './config/ReactotronConfig';
+import './config/DevToolsConfig';
+
+// import Todo from './components/Todo';
+import Todo from '~/components/Todo';
 
 export default class App extends Component {
   state = {
-    text: "",
-    usuario: "Jonilson",
-    todos: [
-      { id: 0, text: "Fazer café" },
-      { id: 1, text: "Estudar o GoNative" }
-    ]
+    // text: '',
+    usuario: 'Jonilson',
+    todos: [{ id: 0, text: 'Fazer café' }, { id: 1, text: 'Estudar o GoNative' }],
   };
+
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.setState({ text: 'Teste' });
+  //   }, 5000);
+  // }
 
   addTodo = () => {
     this.setState({
-      usuario: this.state.usuario + "3",
-      todos: [...this.state.todos, { id: Math.random(), text: "Novo todo" }]
+      usuario: `${this.state.usuario}3`,
+      todos: [...this.state.todos, { id: Math.random(), text: 'Novo todo' }],
     });
   };
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ text: "Teste" });
-    }, 5000);
-  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.text}</Text>
+        {/* <Text>{this.state.text}</Text>
         <Text>{this.state.usuario}</Text>
         {this.state.todos.map(todo => (
           <Todo key={todo.id} title={todo.text} />
         ))}
-        <Button title="Adicionar todo" onPress={this.addTodo} />
+        <Button title="Adicionar todo" onPress={this.addTodo} /> */}
+        <Todo title="Fazer café" />
+        <Todo title="Estudar o GoNative" />
       </View>
     );
   }
@@ -43,8 +48,22 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  }
+    backgroundColor: '#333',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  box: {
+    width: 80,
+    height: 80,
+    backgroundColor: '#F00',
+    margin: 10,
+    transform: [{ rotateZ: '20deg' }],
+  },
+
+  boxText: {
+    color: '#FFF',
+  },
 });
