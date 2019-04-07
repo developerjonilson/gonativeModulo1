@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {
-  Platform, StyleSheet, Text, View, Button,
+  // Platform, StyleSheet, Text, View, Button,
+  StyleSheet,
+  View,
 } from 'react-native';
 
 import './config/ReactotronConfig';
@@ -8,6 +10,7 @@ import './config/DevToolsConfig';
 
 // import Todo from './components/Todo';
 import Todo from '~/components/Todo';
+// import Todo from '~/components';
 
 export default class App extends Component {
   state = {
@@ -23,9 +26,11 @@ export default class App extends Component {
   // }
 
   addTodo = () => {
+    const { usuario, todos } = this.state;
+
     this.setState({
-      usuario: `${this.state.usuario}3`,
-      todos: [...this.state.todos, { id: Math.random(), text: 'Novo todo' }],
+      usuario: `${usuario}3`,
+      todos: [...todos, { id: Math.random(), text: 'Novo todo' }],
     });
   };
 
@@ -39,7 +44,7 @@ export default class App extends Component {
         ))}
         <Button title="Adicionar todo" onPress={this.addTodo} /> */}
         <Todo title="Fazer café" />
-        <Todo title="Estudar o GoNative" />
+        {/* <Todo title="Estudar o GoNative" /> */}
       </View>
     );
   }

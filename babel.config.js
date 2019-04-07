@@ -4,16 +4,19 @@ module.exports = {
     [
       'babel-plugin-root-import',
       {
+        rootPathPrefix: '~',
         rootPathSuffix: 'src',
       },
     ],
   ],
   env: {
+    // For React Native
     production: {
       plugins: [
         [
           'babel-plugin-root-import',
           {
+            rootPathPrefix: '~',
             rootPathSuffix: 'src',
           },
         ],
