@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   // Platform, StyleSheet, Text, View, Button,
   StyleSheet,
-  View,
-} from 'react-native';
+  View
+} from "react-native";
 
-import './config/ReactotronConfig';
-import './config/DevToolsConfig';
+import "./config/ReactotronConfig";
+import "./config/DevToolsConfig";
 
 // import Todo from './components/Todo';
-import Todo from '~/components/Todo';
+import Todo from "~/components/Todo";
 // import Todo from '~/components';
 
 export default class App extends Component {
   state = {
     // text: '',
-    usuario: 'Jonilson',
-    todos: [{ id: 0, text: 'Fazer café' }, { id: 1, text: 'Estudar o GoNative' }],
+    usuario: "Jonilson",
+    todos: [
+      { id: 0, text: "Fazer café" },
+      { id: 1, text: "Estudar o GoNative" }
+    ]
   };
 
   // componentDidMount() {
@@ -30,7 +33,7 @@ export default class App extends Component {
 
     this.setState({
       usuario: `${usuario}3`,
-      todos: [...todos, { id: Math.random(), text: 'Novo todo' }],
+      todos: [...todos, { id: Math.random(), text: "Novo todo" }]
     });
   };
 
@@ -53,22 +56,22 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#333",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   box: {
     width: 80,
     height: 80,
-    backgroundColor: '#F00',
+    backgroundColor: "#F00",
     margin: 10,
-    transform: [{ rotateZ: '20deg' }],
+    transform: [{ rotateZ: "20deg" }]
   },
 
   boxText: {
-    color: '#FFF',
-  },
+    color: "#FFF"
+  }
 });
